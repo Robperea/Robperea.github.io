@@ -28,12 +28,11 @@
 
     var athletes = ["Michael Jordan", "Kobe Bryant", "Serena Williams", "Leo Messi", "Simone Biles", "Michael Phelps", "Patrick Mahomes", "Saquon Barkley", "Aaron Donald"];
 
-    function displayAthleteInfo() {
-        var athlete = $(this).attr("data-person");
+    function displayAthleteInfo(athlete) {
+        
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         athlete + "&api_key=QvA5gAG4ModNZNDgwLMkDuvtTJqeU1y4&limit=10";
     
-
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -55,7 +54,7 @@
 
                 $("#gif-display").prepend(gifDiv);
         
-    }
+        }
     });
 };
 
@@ -77,8 +76,10 @@
         athletes.push(athlete);
         createButtons();
     })
-    $(".athlete-btn").on("click", function() {
-        displayAthleteInfo();
+    $(document).on("click",".athlete-btn", function() {
+        var athlete = $(this).attr("data-person");
+        console.log(athlete)
+        displayAthleteInfo(athlete);
     });
 
     function playGif() { 
