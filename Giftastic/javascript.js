@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    var athletes = ["Michael Jordan", "Kobe Bryant", "Serena Williams", "Leo Messi", "Simone Biles", "Michael Phelps", "Patrick Mahomes", "Saquon Barkley", "Aaron Donald"];
+    var athletes = ["Michael Jordan", "Kobe Bryant", "Serena Williams", "Leo Messi", "Simone Biles", "Michael Phelps", "Patrick Mahomes", "Saquon Barkley", "Aaron Donald", "Aaron Judge"];
 
     function displayAthleteInfo(athlete) {
         
